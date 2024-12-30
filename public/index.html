@@ -1,26 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat App</title>
-    <script src="/socket.io/socket.io.js"></script>
-
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; }
-        #messages { border: 1px solid #ccc; height: 300px; overflow-y: scroll; padding: 10px; margin-bottom: 10px; }
-        #message-input { width: 80%; padding: 10px; margin-right: 5px; }
-        #send-btn { padding: 10px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Web-like Chat</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Chat en Tiempo Real</h1>
-    <div id="messages"></div>
-    <input type="text" id="message-input" placeholder="Escribe un mensaje...">
-    <button id="send-btn">Enviar</button>
+  <div class="chat-container">
+    <!-- Barra lateral de información del chat -->
+    <div class="sidebar">
+      <div class="chat-header">
+        <h2>Chat</h2>
+      </div>
+      <div class="contacts">
+        <p>Usuario 1</p>
+        <p>Usuario 2</p>
+      </div>
+    </div>
 
-    <!-- Cliente de Socket.IO -->
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="script.js"></script>
+    <!-- Área de chat -->
+    <div class="chat-box">
+      <div class="messages" id="messages">
+        <!-- Los mensajes aparecerán aquí -->
+      </div>
+
+      <!-- Input de mensaje -->
+      <div class="message-input-area">
+        <textarea id="messageInput" placeholder="Escribe un mensaje..." rows="2"></textarea>
+        <input type="file" id="fileInput" accept="image/*, .pdf, .txt, .doc, .docx" />
+        <button id="sendMessageBtn">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
