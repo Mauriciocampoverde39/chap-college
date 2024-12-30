@@ -1,155 +1,86 @@
-/* Reset y estilos generales */
-* {
+/* Estilo base */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  body {
-    background-color: #e5ded8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  /* Contenedor principal */
-  .chat-container {
-    display: flex;
-    width: 100%;
-    max-width: 900px;
-    height: 90%;
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  /* Barra lateral */
-  .sidebar {
-    width: 25%;
-    background-color: #128C7E;
-    color: white;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .chat-header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .chat-header h2 {
-    font-size: 20px;
-  }
-  
-  .contacts p {
-    margin: 10px 0;
-    cursor: pointer;
-  }
-  
-  .contacts p:hover {
-    background-color: #075e54;
-    padding: 5px;
-    border-radius: 5px;
-  }
-  
-  /* Área de mensajes */
-  .chat-box {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-  
-  .messages {
-    padding: 15px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-box {
+    padding: 20px;
+    max-height: 400px;
     overflow-y: auto;
-    height: calc(100vh - 180px);
-  }
-  
-  .message {
-    max-width: 60%;
+    background-color: #e5ddd5;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.message {
     padding: 10px;
     margin-bottom: 10px;
-    border-radius: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    width: fit-content;
+    max-width: 80%;
     word-wrap: break-word;
-  }
-  
-  .message.sent {
+}
+
+.my-message {
     background-color: #dcf8c6;
-    align-self: flex-end;
-  }
-  
-  .message.received {
-    background-color: #f1f0f0;
-    align-self: flex-start;
-  }
-  
-  /* Input de mensaje */
-  .message-input-area {
+    color: black;
+    margin-left: auto;
+}
+
+.message-input {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+}
+
+#mensaje-input {
+    width: 70%;
     padding: 10px;
-    background-color: #f1f1f1;
-    border-top: 1px solid #ddd;
-  }
-  
-  textarea {
-    width: 80%;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    resize: none;
-    font-size: 14px;
-  }
-  
-  input[type="file"] {
-    margin-right: 10px;
-    padding: 5px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-  }
-  
-  button {
-    background-color: #075e54;
+}
+
+#file-input {
+    width: 20%;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #128c7e;
-  }
-  
-  /* Estilos para el botón de archivo */
-  textarea:focus, button:focus, input[type="file"]:focus {
-    outline: none;
-  }
-  
-  /* Estilo para previsualización de imagen */
-  .file-preview {
-    max-width: 100%;
-    margin-top: 10px;
-  }
-  
-  @media (max-width: 768px) {
-    .chat-container {
-      flex-direction: column;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
     }
-  
-    .sidebar {
-      width: 100%;
-      height: 50px;
-      padding: 10px;
+
+    .message-input input {
+        width: 60%;
     }
-  
-    .chat-box {
-      height: 100%;
+
+    .message-input button {
+        width: 30%;
     }
-  }
-  
+}
